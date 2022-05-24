@@ -1,0 +1,223 @@
+/*
+  1. Use a more-intuitive box-sizing model.
+*/
+*, *::before, *::after {
+    box-sizing: border-box;
+  }
+  /*
+    2. Remove default margin
+  */
+  * {
+    margin: 0;
+  }
+  /*
+    3. Allow percentage-based heights in the application
+  */
+  html, body {
+    height: 100%;
+  }
+  /*
+    Typographic tweaks!
+    4. Add accessible line-height
+    5. Improve text rendering
+  */
+  body {
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+  }
+  /*
+    6. Improve media defaults
+  */
+  img, picture, video, canvas, svg {
+    display: block;
+    max-width: 100%;
+  }
+  /*
+    7. Remove built-in form typography styles
+  */
+  input, button, textarea, select {
+    font: inherit;
+  }
+  /*
+    8. Avoid text overflows
+  */
+  p, h1, h2, h3, h4, h5, h6 {
+    overflow-wrap: break-word;
+  }
+  /*
+    9. Create a root stacking context
+  */
+  #root, #__next {
+    isolation: isolate;
+  }
+
+  :root {
+    --shadow-color: 232deg 76% 6%;
+    --shadow-elevation-medium:
+    0.3px 0.5px 0.7px hsl(var(--shadow-color) / 0.29),
+    0.7px 1.3px 1.7px -0.6px hsl(var(--shadow-color) / 0.29),
+    1.3px 2.6px 3.3px -1.2px hsl(var(--shadow-color) / 0.29),
+    2.6px 5.2px 6.5px -1.9px hsl(var(--shadow-color) / 0.29),
+    5px 10px 12.6px -2.5px hsl(var(--shadow-color) / 0.29);
+  }
+
+
+body {
+    font-family: 'Outfit', sans-serif;
+    background-color: hsl(217, 54%, 11%);
+}
+
+main {
+    display: grid;
+    place-items: center;
+    height: 100vh;
+}
+
+.card-wrapper {
+    background-color: hsl(216, 50%, 16%);
+    border-radius: 14px;
+    text-align: left;
+    padding: 30px;
+    max-width: 400px;
+    width: 100%;
+    box-shadow: var(--shadow-elevation-medium);
+}
+
+.card {
+    margin: 0 auto;
+}
+
+.image-wrapper {
+    position: relative;
+}
+
+.nft-img {
+    max-width: 360px;
+    width: 100%;
+    border-radius: 14px;
+    margin-bottom: 10px;
+    transition: 0.3s;
+    cursor: pointer;
+    position: relative;
+}
+
+.nft-img:hover + .view {
+    display: block;
+}
+
+.hover-overlay {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    transition: 0.3s;
+    border-radius: 14px;
+}
+
+
+.view {
+    position: absolute;
+    top: 44%;
+    right: 43%;
+    display: none;
+    transition: 0.5s;
+}
+
+
+.nft-title,
+.nft-desc {
+    display: block;
+}
+
+.nft-title {
+    color: white;
+    font-size: 1.5em;
+    font-weight: 600;
+    line-height: 60px;
+    transition: 0.3s;
+    display: inline;
+    cursor: pointer;
+}
+.nft-title:hover {
+    color: hsl(178, 100%, 50%);
+}
+
+.nft-desc {
+    color:hsl(215, 51%, 70%);
+    font-size: 1.13em;
+    margin-bottom: 15px;
+    font-weight: 300;
+}
+
+.nft-info {
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.nft-info div {
+    display: flex;
+    align-items: center;
+}
+.nft-info div img{
+    margin-right: 5px;
+}
+
+.nft-price {
+    color: hsl(178, 100%, 50%);
+}
+
+.nft-duration {
+    color:hsl(215, 51%, 70%);
+}
+
+.artist {
+    border-top: 1px solid hsl(215, 32%, 27%);
+}
+
+.artist .artist-name {
+    color: white;
+    transition: 0.3s;
+    cursor: pointer;
+}
+.artist .artist-name:hover {
+    color: hsl(178, 100%, 50%);
+}
+
+.artist .creation {
+    color: hsl(215, 51%, 70%);
+}
+
+.eth-logo {
+    display: inline;
+}
+
+.artist {
+    display: flex;
+    padding-top: 15px;
+    align-items: center;
+}
+
+.creator-img {
+    max-width: 30px;
+    width: 100%;
+    border: solid white 1px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.lockup,
+.artist {
+    -moz-user-select: -moz-none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+ 
+    /*
+      Introduced in IE 10.
+      See http://ie.microsoft.com/testdrive/HTML5/msUserSelect/
+    */
+    -ms-user-select: none;
+    user-select: none;
+ }
