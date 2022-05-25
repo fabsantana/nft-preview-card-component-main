@@ -96,12 +96,10 @@ main {
     width: 100%;
     border-radius: 14px;
     margin-bottom: 10px;
-    transition: 0.3s;
-    cursor: pointer;
     position: relative;
 }
 
-.nft-img:hover + .view {
+.hover-overlay:hover > .view {
     display: block;
 }
 
@@ -111,8 +109,13 @@ main {
     bottom: 0;
     left: 0;
     right: 0;
-    transition: 0.3s;
+    transition: 0.5s;
     border-radius: 14px;
+    z-index: 1;
+    cursor: pointer;
+}
+.hover-overlay:hover {
+    background-color: hsla(178, 100%, 50%, .5)
 }
 
 
